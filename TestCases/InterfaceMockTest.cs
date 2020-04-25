@@ -1,5 +1,6 @@
 ﻿
 using XunitTestCaseExample.DemoService;
+using XunitTestCaseExample.Persistence.Entity;
 using System.Collections.Generic;
 using Xunit;
 
@@ -7,6 +8,7 @@ namespace TestCases
 {
     public class InterfaceMockTest
     {
+        [Fact]
         public void DemoServiceTestWithMockRepo()
         {
             var mockRepo = new Moq.Mock<IDemoRepo>();
@@ -26,8 +28,6 @@ namespace TestCases
             yield return new User() { Id = 3, IsActive = false };
             yield return new User() { Id = 4, IsActive = false };
             yield return new User() { Id = 5, IsActive = true };
-
-
         }
     }
 }
